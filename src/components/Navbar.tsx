@@ -11,12 +11,8 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Classes", href: "/classes" },
-  { name: "Trainers", href: "/trainers" },
-  { name: "Membership", href: "/membership" },
-  { name: "Branches", href: "/branches" },
   { name: "Gallery", href: "/gallery" },
   { name: "Shop", href: "/store" },
-  { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -59,7 +55,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden xl:flex items-center gap-7">
+            <nav className="hidden lg:flex items-center gap-7">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -86,17 +82,17 @@ export default function Navbar() {
             </nav>
 
             {/* CTA Join Button */}
-            <div className="hidden xl:block">
+            <div className="hidden lg:block">
               <Link href="/membership">
                 <button className="bg-gold-gradient text-black font-outfit text-sm font-bold tracking-wide uppercase px-6 py-2.5 rounded-md glow-gold-hover hover:scale-105 transition duration-300 flex items-center gap-2">
-                  Join Now
+                  Join Us
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </Link>
             </div>
 
             {/* Mobile Menu Toggle Button */}
-            <div className="xl:hidden">
+            <div className="lg:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-zinc-300 hover:text-white focus:outline-none p-1.5 rounded-md bg-zinc-900 border border-white/10"
@@ -119,7 +115,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 xl:hidden"
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 lg:hidden"
             />
 
             {/* Drawer */}
@@ -128,7 +124,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", bounce: 0.1, duration: 0.4 }}
-              className="fixed right-0 top-0 h-full w-[280px] sm:w-[320px] bg-[#0c0c0e] border-l border-white/10 p-6 shadow-2xl z-40 xl:hidden flex flex-col justify-between"
+              className="fixed right-0 top-0 h-full w-[280px] sm:w-[320px] bg-[#0c0c0e] border-l border-white/10 p-6 shadow-2xl z-40 lg:hidden flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-8">
@@ -171,7 +167,7 @@ export default function Navbar() {
               <div className="mt-8">
                 <Link href="/membership" onClick={() => setIsOpen(false)}>
                   <button className="w-full bg-gold-gradient text-black font-outfit text-base font-bold tracking-wide uppercase py-3 rounded-md glow-gold hover:opacity-95 text-center flex items-center justify-center gap-2">
-                    Join Now
+                    Join Us
                     <ArrowRight className="w-5 h-5" />
                   </button>
                 </Link>
