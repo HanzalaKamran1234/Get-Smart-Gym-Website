@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://get-smart-gym-website.vercel.app/sitemap.xml
